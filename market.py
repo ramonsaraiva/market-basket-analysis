@@ -28,7 +28,7 @@ df = df.applymap(map_f)
 
 frequent_itemsets = apriori(df, min_support=0.1, use_colnames=True)
 rules = association_rules(
-    frequent_itemsets, metric='confidence', min_threshold=0.2)
+    frequent_itemsets, metric='lift', min_threshold=1)
 
 itemset_count = len(frequent_itemsets)
 rules_count = len(rules)
